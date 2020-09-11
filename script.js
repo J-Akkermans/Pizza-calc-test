@@ -17,6 +17,22 @@ function pizzaCalc(id) {
     clicksPizzas[id] += 1; 
     if (id === 0) { 
         countKlein++ 
+        if(countKlein => 1){
+
+            var btnPlus = document.createElement('button');
+            var btnMin = document.createElement('button');
+            btnPlus.id = 'test';
+            btnMin.id = 'test1';
+            btnMin.innerText = '-';
+            btnPlus.innerText = '+';
+            var div = document.getElementById("container")
+            var tester = "BUTTON"
+            div.appendChild(btnMin);
+            div.appendChild(btnPlus);
+            // document.getElementById('markup').innerText = btn.outerHTML;
+
+
+        }
         if (countKlein == 2) { 
             document.getElementById("pizzaKlein").innerHTML = pizzaMeer 
         }
