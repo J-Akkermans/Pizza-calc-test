@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>B1W3O1</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="margin: 50px 50px 50px 50px; color: white; background-color: black;">
+<body>
+    <div class="container">
     <button id="optel" onclick="pizzaCalc(0);"><img class="" src="pizza.png" width="129" height="129"> <br> Klein |
         <b>5.00</b></button>
     <button id="optel" onclick="pizzaCalc(1);"><img class="" src="pizza.png" width="129" height="129"> <br> Middel |
@@ -34,10 +36,13 @@
             <div id="grootContainer"></div>
         </p>
         <P>
-            Het eindbedrag <span id="totaal"></span>
+            <hr width="300px;" 
+            align="left">
+            Het eindbedrag: <span id="totaal"></span>
         </P>
     </div>
     </div>
+</div>
 </body>
 <script src="script.js"></script>
 

@@ -24,8 +24,8 @@ function pizzaCalc(id) {
                 var btnKleinmin = document.createElement('button');
                 btnKleinPlus.id = buttonIds[0]; //Geef id aan button uit array
                 btnKleinmin.id = buttonIds[1];
-                btnKleinPlus.innerText = '+'; //Tekst van de gemaakte button
-                btnKleinmin.innerText = '-';
+                btnKleinPlus.innerText = ' + '; //Tekst van de gemaakte button
+                btnKleinmin.innerText = '- ';
                 div.appendChild(btnKleinPlus);
                 div.appendChild(btnKleinmin);
                 btnKleinPlus.setAttribute("onClick", "editOrder(id);");
@@ -98,19 +98,13 @@ var clicksButtons = [0, 0, 0, 0, 0, 0]
 
 function editOrder(id2) {
     clicksButtons[id2] += 1;
-    console.log(id2);
- 
-
-
-
-    
     if (id2 === 'buttonKleinPlus') {
         countKlein++
         var totaalKlein = countKlein * KLEIN;
         document.getElementById("totaalPrijsKlein").innerHTML = totaalKlein + " Euro";
         document.getElementById("totaalKlein").innerHTML = countKlein
     } else if (id2 === 'buttonKleinMinus') {
-        if(countKlein === 1){
+        if (countKlein === 1) {
             document.getElementById(buttonIds[0]).remove();
             document.getElementById(buttonIds[1]).remove();
         }
@@ -121,18 +115,17 @@ function editOrder(id2) {
             document.getElementById("totaalKlein").innerHTML = countKlein
         }
     }
-    if(id2 === 'buttonMiddlePlus'){
+    if (id2 === 'buttonMiddlePlus') {
         countMiddel++
         var totaalMiddel = countMiddel * MIDDEL;
         document.getElementById("totaalPrijsMiddel").innerHTML = totaalMiddel + " Euro";
         document.getElementById("totaalMiddel").innerHTML = countMiddel;
-    }
-    else if(id2 ==='buttonMiddelMinus'){
-        if(countMiddel === 1){
+    } else if (id2 === 'buttonMiddelMinus') {
+        if (countMiddel === 1) {
             document.getElementById(buttonIds[2]).remove();
             document.getElementById(buttonIds[3]).remove();
         }
-        if(countMiddel > 0){
+        if (countMiddel > 0) {
             countMiddel--
             var totaalMiddel = countMiddel * MIDDEL;
             document.getElementById("totaalPrijsMiddel").innerHTML = totaalMiddel + " Euro";
@@ -140,35 +133,26 @@ function editOrder(id2) {
         }
 
     }
-    if(id2 === 'buttonMiddelMGroot'){
+    if (id2 === 'buttonMiddelMGroot') {
         countGroot++
         var totaalGroot = countGroot * GROOT;
         document.getElementById("totaalPrijsGroot").innerHTML = totaalGroot + " Euro";
         document.getElementById("totaalGroot").innerHTML = countGroot;
-    }   
-    else if(id2 === 'buttonGrootMinus'){
-        if(countGroot === 1){
+    } else if (id2 === 'buttonGrootMinus') {
+        if (countGroot === 1) {
             document.getElementById(buttonIds[4]).remove();
             document.getElementById(buttonIds[5]).remove();
         }
-        if(countGroot > 0){
+        if (countGroot > 0) {
             countGroot--
             var totaalGroot = countGroot * GROOT;
             document.getElementById("totaalPrijsGroot").innerHTML = totaalGroot + " Euro";
-            document.getElementById("totaalGroot").innerHTML = countGroot; 
+            document.getElementById("totaalGroot").innerHTML = countGroot;
         }
     }
 
     var totaal = countKlein * KLEIN + countMiddel * MIDDEL + countGroot * GROOT;
     document.getElementById("totaal").innerHTML = totaal + " Euro";
 
-
-
-
-
 }
 
-
-// var totaalGroot = countGroot * GROOT;
-// document.getElementById("totaalPrijsGroot").innerHTML = totaalGroot + " Euro";
-// document.getElementById("totaalGroot").innerHTML = countGroot;
